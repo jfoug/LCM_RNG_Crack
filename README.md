@@ -14,7 +14,8 @@ chance of happening for each charcater.  Then once the group is determined,
 any character FROM that group is uniformly possible.  So to me, this APPEARS
 to be some simplistic RNG function, and likely something like this:
 
-char next() {
+```c
+char next_rnd_char() {
    int i = rand();
    switch(i%4) {
       case 0:  return 'a'+i%25;
@@ -22,6 +23,7 @@ char next() {
       case 2:  return '0'+i%9;
       case 3:  return symbols[i%10];
 }
+```
 
 Now, I have no knowledge of the real sorce code which generated these 10 character
 long 'random' strings. BUT it appears to be something like the function listed
